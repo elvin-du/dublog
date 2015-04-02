@@ -16,14 +16,6 @@ func init() {
 		log.Fatalln(err)
 	}
 	log.Println(addr)
-
-    ints := []int{}
-    err = config.Get("http:test", &ints)
-	if nil != err {
-		log.Fatalln(err)
-	}
-	log.Println(ints)
-
 }
 
 func main() {

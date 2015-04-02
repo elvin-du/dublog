@@ -8,3 +8,7 @@ import(
 type Context struct{
     *sql.DB
 }
+
+func NewContext()*Context{
+    return &Context{}
+}

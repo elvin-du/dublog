@@ -2,6 +2,8 @@ package controller
 
 import(
     "dublog/router"
+    "log"
+    "dublog/model"
 )
 
 func init(){
@@ -16,7 +18,14 @@ var(
 
 func (*HomeController)Home(ctx *router.Context){
     ctx.WriteHeader(200)
-    ctx.Write([]byte("I love you!!"))
+    res,err := model.HomeModel().Index()
+    if nil != err{
+        log.Println(err)
+        ctx.WriteHeader(500)
+        ctx.Write([]byte(err.Error()))
+        return
+    }
+    ctx.Write([]byte(res["user"]))
 }
 
 

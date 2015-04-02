@@ -1,5 +1,43 @@
 http:
   addr: 127.0.0.1:9999
-  test:
-    - 123
-    - 456
+  debug: true
+  profile: true
+
+mysql:
+  main:
+    master:
+      addr: localhost:3306
+      user: root
+      passwd:
+      dbname: dublog
+      pool: 100
+      debug: true
+    slave:
+      addr: localhost:3306
+      user: root
+      passwd:
+      dbname: dublog
+      pool: 100
+      debug: true
+  shard1:
+    master:
+      addr: localhost:3306
+      user: root
+      passwd:
+      dbname: dublog
+      pool: 100
+      debug: true
+    slave:
+      addr: localhost:3306
+      user: root
+      passwd:
+      dbname: dublog
+      pool: 100
+      debug: true
+
+redis:
+  main:
+    addr: localhost:6379
+    pool: 100
+
+
