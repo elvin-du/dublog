@@ -16,7 +16,6 @@ func readConf() {
 	if nil != err {
 		log.Fatalln(err)
 	}
-	log.Println(mysqlSpecs)
 
     err = startDB()
     if nil != err {

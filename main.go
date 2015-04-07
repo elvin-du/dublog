@@ -20,7 +20,6 @@ func init() {
 
 func main() {
 	service.Start()
-	//	addr := ":9999"
 	err := http.ListenAndServe(addr, router.Router())
 	if nil != err {
 		log.Fatalln(err)
