@@ -22,5 +22,5 @@ func (*AmqpController) Publish(ctx *router.Context) {
 		return
 	}
     ctx.ResponseWriter.WriteHeader(200)
-    ctx.ResponseWriter.Write([]byte(ctx.Request.FormValue("amqpMsg")))
+    ctx.ResponseWriter.Write([]byte(ctx.Request.FormValue("msg")))
 }

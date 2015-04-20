@@ -25,9 +25,10 @@ func (this *router) Register(path string, h HandlerFunc) {
 }
 
 func (this *router) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
-    log.Println("req path:",req.URL.Path)
+	log.Println("req path:", req.URL.Path)
 	if strings.HasPrefix(req.URL.Path, "/static") {
-		http.ServeFile(rw, req, "."+req.URL.Path)
+		//		http.ServeFile(rw, req, "."+req.URL.Path)
+		http.FileServer(assetFS())
 		return
 	}
 

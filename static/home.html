@@ -4,8 +4,9 @@
     </head>
     <body>
 		<form method="POST" action="/amqp/publish">
-		<input type="text" name="amqpMsg" placeholder="json amqp msg" required>
-		<input type="submit">Submit</button>
+		<textarea name="msg" rows="20" cols="100"  placeholder="json amqp msg"></textarea>
+		<br>
+		<input type="submit" value="Submit">
 		</from>
     </body>
 </html>
